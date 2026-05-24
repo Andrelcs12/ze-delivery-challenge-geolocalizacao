@@ -1,17 +1,15 @@
-version: '3.8'
-
 services:
   db:
-    image: postgres:15-alpine
-    container_name: dev-postgres
+    image: postgis/postgis:15-3.3-alpine
+    container_name: ze-delivery-postgres
     environment:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: root
-      POSTGRES_DB: desafio_db
+      POSTGRES_DB: ze_delivery_db
     ports:
       - "5432:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - ze_postgres_data:/var/lib/postgresql/data
 
 volumes:
-  postgres_data:
+  ze_postgres_data:
